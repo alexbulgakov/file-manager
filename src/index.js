@@ -15,6 +15,7 @@ import up from "./commands/up.js";
 import cd from "./commands/cd.js";
 import ls from "./commands/ls.js";
 import os from "./commands/os/index.js";
+import hash from "./commands/hash.js";
 
 const input = process.stdin;
 const output = process.stdout;
@@ -70,6 +71,10 @@ const FileManager = () => {
 
         case COMMANDS.OS:
           os(command.slice(5));
+          break;
+
+        case COMMANDS.HASH:
+          await hash(command.slice(5));
           break;
 
         default:
