@@ -8,5 +8,6 @@
     "start": "node src"
   },
   "author": "",
+  "type": "module",
   "license": "ISC"
 }
