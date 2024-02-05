@@ -11,6 +11,9 @@ import rn from "./commands/rn.js";
 import cp from "./commands/cp.js";
 import mv from "./commands/mv.js";
 import rm from "./commands/rm.js";
+import up from "./commands/up.js";
+import cd from "./commands/cd.js";
+import ls from "./commands/ls.js";
 
 const input = process.stdin;
 const output = process.stdout;
@@ -46,6 +49,22 @@ const FileManager = () => {
 
         case COMMANDS.RM:
           await rm(command.slice(3), false);
+          break;
+
+        case COMMANDS.EXIT:
+          rl.close();
+          break;
+
+        case COMMANDS.UP:
+          up();
+          break;
+
+        case COMMANDS.CD:
+          cd(command.slice(3));
+          break;
+
+        case COMMANDS.LS:
+          ls();
           break;
 
         default:
