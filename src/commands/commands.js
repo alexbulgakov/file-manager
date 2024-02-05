@@ -9,6 +9,7 @@ const COMMANDS = {
   CD: "cd",
   LS: "ls",
   EXIT: ".exit",
+  OS: "os",
 };
 
 export default COMMANDS;

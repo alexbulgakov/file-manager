@@ -14,6 +14,7 @@ import rm from "./commands/rm.js";
 import up from "./commands/up.js";
 import cd from "./commands/cd.js";
 import ls from "./commands/ls.js";
+import os from "./commands/os/index.js";
 
 const input = process.stdin;
 const output = process.stdout;
@@ -65,6 +66,10 @@ const FileManager = () => {
 
         case COMMANDS.LS:
           ls();
+          break;
+
+        case COMMANDS.OS:
+          os(command.slice(5));
           break;
 
         default:
