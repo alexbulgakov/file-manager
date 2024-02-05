@@ -11,6 +11,8 @@ const COMMANDS = {
   EXIT: ".exit",
   OS: "os",
   HASH: "hash",
+  COMPRESS: "compress",
+  DECOMPRESS: "decompress",
 };
 
 export default COMMANDS;

@@ -16,6 +16,8 @@ import cd from "./commands/cd.js";
 import ls from "./commands/ls.js";
 import os from "./commands/os/index.js";
 import hash from "./commands/hash.js";
+import compress from "./commands/compress.js";
+import decompress from "./commands/decompress.js";
 
 const input = process.stdin;
 const output = process.stdout;
@@ -53,10 +55,6 @@ const FileManager = () => {
           await rm(command.slice(3), false);
           break;
 
-        case COMMANDS.EXIT:
-          rl.close();
-          break;
-
         case COMMANDS.UP:
           up();
           break;
@@ -75,6 +73,18 @@ const FileManager = () => {
 
         case COMMANDS.HASH:
           await hash(command.slice(5));
+          break;
+
+        case COMMANDS.COMPRESS:
+          await compress(command.slice(9));
+          break;
+
+        case COMMANDS.DECOMPRESS:
+          await decompress(command.slice(11));
+          break;
+
+        case COMMANDS.EXIT:
+          rl.close();
           break;
 
         default:
